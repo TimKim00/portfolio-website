@@ -1,7 +1,7 @@
 import StyledHr from "./StyledHr";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useState, useRef } from "react";
+import { React, useState, useRef } from "react";
 
 // Icons
 import LinkIcon from "../assets/externalLink.svg";

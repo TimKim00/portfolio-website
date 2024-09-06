@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import TagWrapper from "../posts/TagWrapper";
-import { useRef } from "react";
+import { React, useRef } from "react";
 
 // Images
 import NoImage from "../../assets/no-image.jpg";

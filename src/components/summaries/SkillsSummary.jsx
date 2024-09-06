@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useThemeContext } from "../../hooks/useThemeContext";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 
 // Icons
 import CIcon from "../../assets/techIcons/c.svg";

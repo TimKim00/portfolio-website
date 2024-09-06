@@ -1,3 +1,5 @@
+import React from "react";
+
 const extraFonts = "Helvetica, Arial, sans-serif";
 
 export const darkTheme = {

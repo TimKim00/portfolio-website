@@ -1,3 +1,4 @@
+import React from "react";
 import StyledHr from "../components/StyledHr";
 import SkillsSummary from "../components/summaries/SkillsSummary";
 import styled from "styled-components";
