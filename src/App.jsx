@@ -8,7 +8,6 @@ import ThemeProvider from "./contexts/ThemeContext";
 import Root from "./Root";
 
 import AboutPage from "./pages/AboutPage";
-import Homepage from "./pages/Homepage";
 import AllPostPage from "./pages/AllPostPage";
 import Post from "./components/Post";
 import AllTagsPage from "./pages/AllTagsPage";
@@ -16,6 +15,7 @@ import TagPage from "./components/TagPage";
 import ErrorPage from "./pages/ErrorPage";
 import AllProjectsPage from "./pages/AllProjectsPage";
 import ProjectPage from "./components/ProjectPage";
+import Homepage from "./pages/HomePage";
 
 const router = createBrowserRouter([
   {
