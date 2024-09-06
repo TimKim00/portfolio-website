@@ -263,10 +263,10 @@ const SpecialText = styled.span`
 `;
 
 const EmojiAnimation = styled.div`
-  //https://codepen.io/jakejarvis/pen/pBZWZw 
+  //https://codepen.io/jakejarvis/pen/pBZWZw
 
   animation-name: wave;
-  animation-duration: 2.5s; 
+  animation-duration: 2.5s;
   animation-iteration-count: infinite;
   transform-origin: 70% 70%;
   display: inline-block;
