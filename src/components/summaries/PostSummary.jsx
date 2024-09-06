@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import TagIcon from "../posts/TagIcon";
+import { useRef } from "react";
 
 // Images
 import NoImage from "../../assets/no-image.jpg";
@@ -15,11 +16,36 @@ export default function PostSummary({
   github,
   tags,
 }) {
+  const videoRef = useRef(null);
+
+  // Function to play video on hover
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.controls = true;
+    }
+  };
+
+  // Function to pause video when hover ends
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.controls = false;
+    }
+  };
+
   return (
     <PostWrapper>
       <PreviewContainer>
         {preview ? (
-          <PostPreview src={preview || NoImage} autoPlay loop muted controls />
+          <PostPreview
+            ref={videoRef}
+            src={preview}
+            loop
+            muted
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
         ) : (
           <PostPreviewImage src={previewImage || NoImage} draggable="false" />
         )}
@@ -45,7 +71,14 @@ export default function PostSummary({
         </div>
         <PostBody>
           <PostDescription>{description}</PostDescription>
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px", width: "fit-content" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              width: "fit-content",
+            }}
+          >
             {link && (
               <Link target="_blank" href={link} draggable="false">
                 <AnimatedText>Visit Project</AnimatedText>
@@ -115,7 +148,7 @@ const PostHeader = styled.div`
   font-size: 2.25rem;
   color: ${(props) => props.theme.main.fonts.primary};
   text-align: start;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 `;
 
 const PostBody = styled.div`
