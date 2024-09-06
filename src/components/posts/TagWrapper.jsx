@@ -8,7 +8,6 @@ export default function TagWrapper({ tags }) {
   const tooltipRef = useRef(null); // Ref for tooltip to detect outside clicks
 
   const displayTags = tags.slice(0, 2);
-  const extraTags = tags.slice(2); // Tags that will be shown in tooltip
 
   const handleToggleTooltip = () => {
     setShowTooltip((prev) => !prev); // Toggle tooltip visibility

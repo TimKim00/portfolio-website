@@ -18,7 +18,7 @@ export default function HomePage() {
       preview: MessengerPreview,
       link: "https://messaging-app-2hys.onrender.com",
       github: "https://github.com/TimKim00/Messaging-app",
-      tags: ["socket", "web", "react", "node", "mongo"],
+      tags: ["socket", "web", "react", "node", "mongo", "javascript", "html", "tailwind", "css"],
     },
     {
       title: "Pacman AI",
@@ -33,7 +33,7 @@ export default function HomePage() {
       previewImage: BlogPreview,
       link: "",
       github: "https://github.com/TimKim00/BlogAPI",
-      tags: ["node", "postgres", "testing"],
+      tags: ["testing", "postgres", "node", "javascript"],
     },
   ];
 
