@@ -1,0 +1,58 @@
+# Sample workflow for building and deploying a site built with npm to GitHub Pages
+name: Deploy Website with npm
+
+on:
+  # Runs on pushes to the default branch (e.g., "main")
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      # Install Node.js, npm and set up environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify your preferred Node version
+
+      # Install npm dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the project (replace "build" with the appropriate script for your project)
+      - name: Build the site
+        run: npm run build
+
+      # Upload the built site as an artifact to be used in the deploy step
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Update this path according to your project (e.g., "dist" for Vue, "out" for Next.js)
+
+  # Deployment job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
