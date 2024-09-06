@@ -75,7 +75,7 @@ export default function HomePage() {
       <StyledHr />
       <Element name="about">
         <SkillsSummary />
-      </Element>
+      </Element> 
     </>
   );
 }
