@@ -129,7 +129,7 @@ const PreviewContainer = styled.div`
   height: 20rem;
   overflow: hidden;
   border-radius: 16px;
-  outline: 2px solid ${({ theme }) => theme.portfolio.border};
+  border: 2px solid ${({ theme }) => theme.portfolio.border};
 `;
 
 const PostPreview = styled.video`

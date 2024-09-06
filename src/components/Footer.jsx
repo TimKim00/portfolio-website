@@ -2,6 +2,7 @@ import StyledHr from "./StyledHr";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { React, useState, useRef } from "react";
+import { Element } from "react-scroll";
 
 // Icons
 import LinkIcon from "../assets/externalLink.svg";
@@ -38,7 +39,7 @@ export default function Footer({ divider = true }) {
   };
 
   return (
-    <div>
+    <Element name="footer">
       {divider && <StyledHr />}
       <FooterWrapper>
         <FooterContent>
@@ -72,7 +73,7 @@ export default function Footer({ divider = true }) {
             </div>
             <br />
             <a
-              href="../assets/Timothy_Kim_Resume_2024_.pdf"
+              href="/Timothy_Kim_Resume_2024_.pdf"
               download
               style={{ textDecoration: "none", color: `inherit` }}
             >
@@ -106,7 +107,7 @@ export default function Footer({ divider = true }) {
           <Text secondary="true">California, USA</Text>
         </FooterContent>
       </FooterWrapper>
-    </div>
+    </Element>
   );
 }
 

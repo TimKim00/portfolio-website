@@ -67,7 +67,7 @@ export default function Nav() {
   }, [activeTab]);
 
   return (
-    <NavWrapper ref={nodeRef} style={{ bottom: bottomPosition }}>
+    <NavWrapper ref={nodeRef} style={{ bottom: bottomPosition }} className="nav">
       <NavList ref={navListRef}>
         <BackgroundPanel style={panelStyle} />
         {navIcons.map((tab, index) => (
@@ -112,7 +112,7 @@ const NavWrapper = styled.div`
   opacity: 0.8;
   bottom: 5%;
   left: 52%;
-  transform: translateX(-50%);
+  transform: translateX(-52%);
   box-shadow: 0px 6px 16px -5px ${({ theme }) => theme.nav.shadow};
 
   outline: 1px solid ${({ theme }) => theme.nav.border};

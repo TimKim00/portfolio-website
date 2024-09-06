@@ -12,6 +12,8 @@ export const darkTheme = {
       primary: "#E0E0E0", // Light grey for primary text
       secondary: "#B0B0B0", // Slightly darker grey for secondary text
       special: "rgba(0, 168, 232)",
+      toggle: "rgba(0, 134, 185)",
+      invert: "#121212",
     },
     fontFamily: {
       light: `cyrLight, ${extraFonts}`,
@@ -56,7 +58,7 @@ export const darkTheme = {
       border: "rgba(55, 55, 55)",
       filter: "invert(1)", 
     },
-    underline: "rgba(0, 200, 235)",
+    underline: "rgba(0, 200, 235, 0.5)",
   },
 };
 
@@ -70,6 +72,8 @@ export const lightTheme = {
       primary: "#333333", // Dark grey for primary text
       secondary: "#777777", // Slightly lighter grey for secondary text
       special: "rgba(255, 99, 88)",
+      toggle: "rgba(204, 79, 70)",
+      invert: "#FAFAFA",
     },
     fontFamily: {
       light: `cyrLight, ${extraFonts}`,

@@ -1,7 +1,7 @@
 import TagIcon from "./TagIcon";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import { React, useState, useEffect, useRef } from "react";
 
 export default function TagWrapper({ tags }) {
   const [showTooltip, setShowTooltip] = useState(false); // State to track tooltip visibility

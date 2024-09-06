@@ -26,7 +26,7 @@ export default function MovingText({ texts }) {
                 setTimeout(() => {
                     setIsPaused(false);
                     setIsRemoving(true);
-                }, 1000); // Pause before starting to remove text
+                }, 1500); // Pause before starting to remove text
             }
         }
     };
