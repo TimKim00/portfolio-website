@@ -116,7 +116,6 @@ const PostWrapper = styled.div`
   margin: 2rem;
   padding: 0;
   gap: 2rem;
-  overflow: hidden;
 `;
 
 const TagIconWrapper = styled.div`
