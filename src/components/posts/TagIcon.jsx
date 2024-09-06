@@ -166,7 +166,7 @@ const TagIconWrapper = styled.div`
   border-radius: 5rem;
   outline: 3px solid ${(props) => props.tagColor.outline};
   font-size: 1rem;
-  padding: 2px 8px;
+  padding: 3px 8px;
   margin: 0;
   gap: 0.25rem;
   height: 1.5rem;

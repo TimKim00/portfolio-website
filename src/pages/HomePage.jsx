@@ -18,7 +18,7 @@ export default function HomePage() {
       preview: MessengerPreview,
       link: "https://messaging-app-2hys.onrender.com",
       github: "https://github.com/TimKim00/Messaging-app",
-      tags: ["web", "react", "node", "socket"],
+      tags: ["socket", "web", "react", "node", "mongo"],
     },
     {
       title: "Pacman AI",
@@ -33,7 +33,7 @@ export default function HomePage() {
       previewImage: BlogPreview,
       link: "",
       github: "https://github.com/TimKim00/BlogAPI",
-      tags: ["web", "node", "postgres", "testing"],
+      tags: ["node", "postgres", "testing"],
     },
   ];
 
@@ -84,7 +84,7 @@ const MainHeader = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  font-size: 5rem;
+  font-size: 4.25rem;
   font-weight: 600;
   color: ${(props) => props.theme.main.fonts.primary};
   text-align: center;
@@ -102,5 +102,5 @@ const PostWrapper = styled.div`
   text-align: center;
   margin: 1.5rem 0;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 `;

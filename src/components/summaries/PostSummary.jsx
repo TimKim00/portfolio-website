@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import TagIcon from "../posts/TagIcon";
+import TagWrapper from "../posts/TagWrapper";
 import { useRef } from "react";
 
 // Images
@@ -21,16 +21,20 @@ export default function PostSummary({
   // Function to play video on hover
   const handleMouseEnter = () => {
     if (videoRef.current) {
-      videoRef.current.play();
       videoRef.current.controls = true;
+      setTimeout(() => {
+        videoRef.current.play();
+      }, 500);
     }
   };
 
   // Function to pause video when hover ends
   const handleMouseLeave = () => {
     if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.controls = false;
+      setTimeout(() => {
+        videoRef.current.pause();
+        videoRef.current.controls = false;
+      }, 500);
     }
   };
 
@@ -62,11 +66,7 @@ export default function PostSummary({
         >
           <PostHeader>{title}</PostHeader>
           {tags && (
-            <TagIconWrapper>
-              {tags.map((tag, index) => (
-                <TagIcon key={index} tag={tag} />
-              ))}
-            </TagIconWrapper>
+            <TagWrapper tags={tags} />
           )}
         </div>
         <PostBody>
@@ -112,9 +112,11 @@ PostSummary.propTypes = {
 const PostWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 0;
   margin: 2rem;
   padding: 0;
   gap: 2rem;
+  overflow: hidden;
 `;
 
 const TagIconWrapper = styled.div`
