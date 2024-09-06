@@ -66,14 +66,15 @@ const router = createBrowserRouter([
     path: "*",
     element: <ErrorPage />,
   },
-]);
+],
+{basename: import.meta.env.BASE_URL});
 
 function App() {
   return (
     <>
       <ThemeProvider>
         <GlobalStyles />
-        <RouterProvider router={router} />
+        <RouterProvider router={router} basename={import.meta.env.BASE_URL} />
       </ThemeProvider>
     </>
   );
