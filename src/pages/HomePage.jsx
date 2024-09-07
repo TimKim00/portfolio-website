@@ -192,7 +192,7 @@ const HoverText = styled.div`
 
 const SubContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 70%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -207,7 +207,7 @@ const SubContainer = styled.div`
 
 const SubHeader = styled.div`
   gap: 0.7rem;
-  width: 70%;
+  width: 100%;
   font-size: 1.4rem;
   font-weight: 400;
   color: ${(props) => props.theme.main.fonts.primary};
