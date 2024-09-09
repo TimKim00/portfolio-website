@@ -9,6 +9,7 @@ import LinkIcon from "../../assets/externalLink.svg";
 
 export default function PostSummary({
   title,
+  fontSize = 2.25,
   preview,
   previewImage,
   description,
@@ -64,7 +65,7 @@ export default function PostSummary({
             marginBottom: "1rem",
           }}
         >
-          <PostHeader>{title}</PostHeader>
+          <PostHeader fontSize={fontSize}>{title}</PostHeader>
           {tags && (
             <TagWrapper tags={tags} />
           )}
@@ -107,6 +108,7 @@ PostSummary.propTypes = {
   link: PropTypes.string.isRequired,
   github: PropTypes.string.isRequired,
   previewImage: PropTypes.string,
+  fontSize: PropTypes.string,
 };
 
 const PostWrapper = styled.div`
@@ -146,8 +148,9 @@ const PostPreviewImage = styled.img`
 const PostHeader = styled.div`
   display: inline-block;
   font-weight: 300;
-  font-size: 2.25rem;
+  font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.theme.main.fonts.primary};
+  margin-bottom: ${(props) => 2.25 - props.fontSize}rem;
   text-align: start;
   font-family: "Poppins", sans-serif;
 `;

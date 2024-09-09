@@ -10,6 +10,7 @@ import PostSummary from "../components/summaries/PostSummary";
 import MessengerPreview from "../assets/projects/messenger-app-demo.mp4";
 import BlogPreview from "../assets/projects/blog.svg";
 import PacmanPreview from "../assets/projects/PacMan.mp4";
+import ShoppingPreview from "../assets/projects/shopping-cart-demo.mp4";
 
 export default function HomePage() {
   const projects = [
@@ -43,11 +44,21 @@ export default function HomePage() {
     {
       title: "Blog API",
       description:
-        "A RESTful API using Node.js, Express, PostgreSQL, and JWT, with full CRUD for posts and comments. Thoroughly tested with Mocha and Chai.",
+        "A RESTful API using Node.js, Express, PostgreSQL, and JWT, with full CRUD for posts and comments. Thoroughly tested with Mocha and Chai (~85% coverage).",
       previewImage: BlogPreview,
       link: "",
       github: "https://github.com/TimKim00/BlogAPI",
       tags: ["testing", "postgres", "node", "javascript"],
+    },
+    {
+      title: "Shopping Cart",
+      description:
+        "A mock e-commerce website that handles simple cart and checkout functionality. Developed with React and react router library. Utilized Fakestore API to fetch data.",
+      preview: ShoppingPreview,
+      fontSize: 1.85,
+      link: "https://shopping-cart-gamma-ruddy.vercel.app/",
+      github: "https://github.com/TimKim00/shopping-cart",
+      tags: ["react", "javascript", "html", "css"],
     },
   ];
 
@@ -134,12 +145,18 @@ export default function HomePage() {
               title={project.title}
               preview={project.preview}
               previewImage={project.previewImage}
+              fontSize={project.fontSize}
               description={project.description}
               link={project.link}
               github={project.github}
               tags={project.tags}
             />
           ))}
+          <AnimateWrapper>
+            <PostRedirect href="https://github.com/TimKim00" target="_blank">
+              <AnimatedText>View More</AnimatedText>
+            </PostRedirect>
+          </AnimateWrapper>
         </PostWrapper>
       </Element>
       {/* Skills */}
@@ -308,4 +325,49 @@ const PostWrapper = styled.div`
   margin: 1.5rem 0;
   justify-content: center;
   gap: 1rem;
+`;
+
+const AnimateWrapper = styled.div`
+  grid-column: 1 / 3;
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const PostRedirect = styled.a`
+  text-decoration: none;
+  color: ${(props) => props.theme.main.fonts.secondary};
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.main.fonts.primary};
+  }
+`;
+
+const AnimatedText = styled.span`
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: ${(props) => props.theme.footer.underline};
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  text-align: start;
 `;
